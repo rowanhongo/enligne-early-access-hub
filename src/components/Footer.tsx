@@ -13,7 +13,8 @@ export const Footer = () => {
               className="h-8"
             />
             <p className="mt-2 text-gray-600 max-w-md">
-              Revolutionizing food delivery with faster service, wider restaurant selection, and exclusive offers.
+              We move Kigali!<br />
+              Tap. Track. Done.
             </p>
           </div>
           
