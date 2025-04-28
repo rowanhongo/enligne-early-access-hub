@@ -28,8 +28,8 @@ export const Hero = () => {
               <span className="text-enligne-red">Right to Your Door</span>
             </h1>
             <p className="text-lg md:text-xl mb-8 text-gray-700">
-              The future of food delivery is here. Experience lightning-fast delivery times, 
-              an extensive selection of restaurants, and exclusive discounts.
+              The future of home delivery in Kigali is here. Experience lightning-fast delivery times, 
+              an extensive selection of restaurants, supermarkets, bakeries and more, and exclusive offers.
             </p>
             
             <Button 

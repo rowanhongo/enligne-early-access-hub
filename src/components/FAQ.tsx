@@ -10,15 +10,15 @@ export const FAQ = () => {
   const faqs = [
     {
       question: "When will Enligne be available in my area?",
-      answer: "We're rapidly expanding our service areas. During early access, we'll be launching in major metropolitan areas first, with plans to expand to additional cities each month. Sign up for early access to be notified when we arrive in your location."
+      answer: "We're rapidly expanding our service areas. During early access, we'll be launching in major metropolitan areas first. Sign up for early access to be notified when we arrive in your location."
     },
     {
       question: "How does the early access program work?",
-      answer: "Early access members will be the first to use Enligne when we launch in their area. You'll receive exclusive perks including free delivery for the first month, special discounts at partner restaurants, and the ability to provide feedback that will shape our service."
+      answer: "Early access members will be the first to use Enligne when we launch in their area. You'll receive exclusive perks."
     },
     {
-      question: "What restaurants are available on Enligne?",
-      answer: "We're partnering with a wide variety of restaurants from local favorites to popular chains. Our selection varies by location, but we're constantly adding new partners to provide you with the best dining options in your area."
+      question: "What businesses are available on Enligne?",
+      answer: "We're partnering with a wide variety of restaurants, supermarkets bakeries and many more local businesses. Our selection varies by location, but we're constantly adding new partners to provide you with the best dining and shoping options in your area."
     },
     {
       question: "Is there a minimum order amount?",
@@ -27,6 +27,10 @@ export const FAQ = () => {
     {
       question: "How do I become a delivery partner?",
       answer: "We're always looking for reliable delivery partners! You can apply directly through our website once we launch in your area. Delivery partners enjoy flexible scheduling, competitive pay, and performance-based bonuses."
+    },
+    {
+      question: "How do I join as a seller or vendor?",
+      answer: "We are currently application only to vendors but will soon expand our network."
     }
   ];
 

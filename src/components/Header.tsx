@@ -37,6 +37,10 @@ export const Header = () => {
           />
         </div>
         
+        <div className="hidden md:block text-enligne-red font-semibold text-lg mr-8">
+          We Move Kigali
+        </div>
+        
         {/* Desktop Navigation */}
         <nav className="hidden md:block">
           <ul className="flex space-x-6">
