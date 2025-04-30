@@ -67,49 +67,69 @@ export const VideoSection = () => {
               className="w-full"
             >
               <CarouselContent className="-ml-1 md:-ml-2">
-                {appImages.map((src, index) => (
-                  <CarouselItem 
-                    key={index} 
-                    className="pl-1 md:pl-2 basis-4/5 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
-                  >
-                    <div className={cn(
-                      "overflow-hidden rounded-xl border border-gray-200 transition-all duration-500 relative",
-                      currentIndex === index 
-                        ? "scale-105 md:scale-110 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.3)] z-20" 
-                        : "scale-95 md:scale-90 opacity-70 z-10"
-                    )}>
-                      {/* Left shadow barrier */}
-                      <div className={cn(
-                        "absolute left-0 top-0 h-full w-[4px] bg-gradient-to-r from-black/20 to-transparent",
-                        currentIndex === index ? "opacity-100" : "opacity-50"
-                      )} />
-                      
-                      {/* Right shadow barrier */}
-                      <div className={cn(
-                        "absolute right-0 top-0 h-full w-[4px] bg-gradient-to-l from-black/20 to-transparent",
-                        currentIndex === index ? "opacity-100" : "opacity-50"
-                      )} />
-                      
-                      <img 
-                        src={src} 
-                        alt={`Enligne App Screenshot ${index + 1}`} 
-                        className="w-full h-auto aspect-[9/16] object-cover"
-                      />
-                    </div>
-                    {currentIndex === index && (
-                      <div className="mt-4 text-center">
-                        <p className="text-sm font-medium text-enligne-red">
-                          {index === 0 ? "Profile" : 
-                           index === 1 ? "Home Screen" : 
-                           index === 2 ? "Customer Support" : 
-                           index === 3 ? "Special Offers" :
-                           index === 4 ? "Restaurant Details" :
-                           "Cart"}
-                        </p>
+                {appImages.map((src, index) => {
+                  // Calculate distance from current item (handles wraparound for loop)
+                  const itemCount = appImages.length;
+                  const distance = Math.min(
+                    Math.abs(index - currentIndex),
+                    Math.abs(index - currentIndex + itemCount),
+                    Math.abs(index - currentIndex - itemCount)
+                  );
+                  
+                  // Scale factor based on distance from current item
+                  const scaleFactor = distance === 0 ? 1 : 0.7;
+                  const opacityFactor = distance === 0 ? 1 : 0.6;
+                  
+                  return (
+                    <CarouselItem 
+                      key={index} 
+                      className="pl-1 md:pl-2 basis-4/5 md:basis-1/2 lg:basis-1/3 transition-all duration-500"
+                    >
+                      <div 
+                        className={cn(
+                          "overflow-hidden rounded-xl border border-gray-200 transition-all duration-500 relative",
+                          "transform-gpu" // Use GPU for smoother transitions
+                        )}
+                        style={{
+                          transform: `scale(${scaleFactor})`,
+                          opacity: opacityFactor,
+                          zIndex: distance === 0 ? 20 : 10,
+                          transition: "transform 500ms ease, opacity 500ms ease"
+                        }}
+                      >
+                        {/* Left shadow barrier */}
+                        <div className={cn(
+                          "absolute left-0 top-0 h-full w-[4px] bg-gradient-to-r from-black/20 to-transparent",
+                          currentIndex === index ? "opacity-100" : "opacity-50"
+                        )} />
+                        
+                        {/* Right shadow barrier */}
+                        <div className={cn(
+                          "absolute right-0 top-0 h-full w-[4px] bg-gradient-to-l from-black/20 to-transparent",
+                          currentIndex === index ? "opacity-100" : "opacity-50"
+                        )} />
+                        
+                        <img 
+                          src={src} 
+                          alt={`Enligne App Screenshot ${index + 1}`} 
+                          className="w-full h-auto aspect-[9/16] object-cover"
+                        />
                       </div>
-                    )}
-                  </CarouselItem>
-                ))}
+                      {currentIndex === index && (
+                        <div className="mt-4 text-center">
+                          <p className="text-sm font-medium text-enligne-red">
+                            {index === 0 ? "Profile" : 
+                             index === 1 ? "Home Screen" : 
+                             index === 2 ? "Customer Support" : 
+                             index === 3 ? "Special Offers" :
+                             index === 4 ? "Restaurant Details" :
+                             "Cart"}
+                          </p>
+                        </div>
+                      )}
+                    </CarouselItem>
+                  );
+                })}
               </CarouselContent>
               <div className="flex justify-center gap-2 mt-6 md:mt-8">
                 <CarouselPrevious className="static transform-none mx-2 bg-enligne-red text-white hover:bg-enligne-red/90" />
