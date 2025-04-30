@@ -9,14 +9,14 @@ import {
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 
-// Array of placeholder images
+// Array of app images - replaced with the provided uploads
 const appImages = [
-  "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1721322800607-8c38375eef04?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&w=800&q=80" // Adding a duplicate for smooth looping
+  "public/lovable-uploads/5294472e-0c2e-4764-b6bf-2f0b6c7d33d1.png",
+  "public/lovable-uploads/0b4ea9bf-da31-4534-847a-65655b74b8e2.png",
+  "public/lovable-uploads/4bc13546-8ef2-495d-8981-11a39e308bea.png",
+  "public/lovable-uploads/ed271ea0-e240-4472-81a2-d865a7fa904e.png",
+  "public/lovable-uploads/a6381050-8fc6-4afa-af49-0a2d7bfdb351.png",
+  "public/lovable-uploads/dba14e2f-e383-4a43-a118-0fdc84846e8e.png"
 ];
 
 export const VideoSection = () => {
@@ -76,14 +76,19 @@ export const VideoSection = () => {
                     )}>
                       <img 
                         src={src} 
-                        alt={`App Screenshot ${index + 1}`} 
+                        alt={`Enligne App Screenshot ${index + 1}`} 
                         className="w-full h-auto aspect-[9/16] object-cover"
                       />
                     </div>
                     {currentIndex === index && (
                       <div className="mt-4 text-center">
                         <p className="text-sm font-medium text-enligne-red">
-                          Feature {index + 1}
+                          {index === 0 ? "Profile" : 
+                           index === 1 ? "Home Screen" : 
+                           index === 2 ? "Customer Support" : 
+                           index === 3 ? "Special Offers" :
+                           index === 4 ? "Restaurant Details" :
+                           "Cart"}
                         </p>
                       </div>
                     )}
