@@ -29,7 +29,7 @@ export const Hero = () => {
             </h1>
             <p className="text-lg md:text-xl mb-8 text-gray-700">
               The future of home delivery in Kigali is here. Experience lightning-fast delivery times, 
-              an extensive selection of restaurants, supermarkets, bakeries and more, and exclusive offers.
+              a varied selection of restaurants, supermarkets, bakeries and more, and exclusive offers.
             </p>
             
             <Button 

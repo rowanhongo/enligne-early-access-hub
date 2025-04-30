@@ -14,8 +14,8 @@ export const Features = () => {
       icon: <Clock className="h-6 w-6 text-enligne-red" />,
     },
     {
-      title: "Exclusive Deals",
-      description: "Access special promotions and discounts from your favorite restaurants.",
+      title: "Find Your Favourites",
+      description: "Discover hard-to-find foods from your favorite restaurants nearby.",
       icon: <Tag className="h-6 w-6 text-enligne-red" />,
     },
     {

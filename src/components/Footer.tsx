@@ -79,9 +79,11 @@ export const Footer = () => {
               <Twitter />
             </a>
             <a 
-              href="#" 
+              href="https://www.instagram.com/enligne.rw?utm_source=qr&igsh=MWdmdnIxaThpbXRwZA==" 
               className="text-gray-500 hover:text-enligne-red transition-colors"
               aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Instagram />
             </a>
