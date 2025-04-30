@@ -8,6 +8,7 @@ import {
   CarouselPrevious
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 // Array of app images - replaced with the provided uploads
 const appImages = [
@@ -23,6 +24,7 @@ export const VideoSection = () => {
   const [api, setApi] = useState<any>();
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const isMobile = useIsMobile();
   
   // Setup auto-scrolling
   useEffect(() => {
@@ -48,10 +50,10 @@ export const VideoSection = () => {
   }, [api]);
   
   return (
-    <section id="video" className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="video" className="py-12 md:py-24 bg-white overflow-hidden">
+      <div className="container mx-auto px-2 md:px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-enligne-black">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center text-enligne-black">
             See Enligne in <span className="text-enligne-red">Action</span>
           </h2>
           
@@ -64,16 +66,30 @@ export const VideoSection = () => {
               }}
               className="w-full"
             >
-              <CarouselContent className="-ml-2 md:-ml-4">
+              <CarouselContent className="-ml-1 md:-ml-2">
                 {appImages.map((src, index) => (
                   <CarouselItem 
                     key={index} 
-                    className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                    className="pl-1 md:pl-2 basis-4/5 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
                   >
                     <div className={cn(
-                      "overflow-hidden rounded-xl border border-gray-200 shadow-md transition-all duration-500",
-                      currentIndex === index ? "scale-110 shadow-lg" : "scale-90 opacity-70"
+                      "overflow-hidden rounded-xl border border-gray-200 transition-all duration-500 relative",
+                      currentIndex === index 
+                        ? "scale-105 md:scale-110 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.3)] z-20" 
+                        : "scale-95 md:scale-90 opacity-70 z-10"
                     )}>
+                      {/* Left shadow barrier */}
+                      <div className={cn(
+                        "absolute left-0 top-0 h-full w-[4px] bg-gradient-to-r from-black/20 to-transparent",
+                        currentIndex === index ? "opacity-100" : "opacity-50"
+                      )} />
+                      
+                      {/* Right shadow barrier */}
+                      <div className={cn(
+                        "absolute right-0 top-0 h-full w-[4px] bg-gradient-to-l from-black/20 to-transparent",
+                        currentIndex === index ? "opacity-100" : "opacity-50"
+                      )} />
+                      
                       <img 
                         src={src} 
                         alt={`Enligne App Screenshot ${index + 1}`} 
@@ -95,15 +111,15 @@ export const VideoSection = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <div className="flex justify-center gap-2 mt-8">
+              <div className="flex justify-center gap-2 mt-6 md:mt-8">
                 <CarouselPrevious className="static transform-none mx-2 bg-enligne-red text-white hover:bg-enligne-red/90" />
                 <CarouselNext className="static transform-none mx-2 bg-enligne-red text-white hover:bg-enligne-red/90" />
               </div>
             </Carousel>
           </div>
           
-          <div className="mt-10 text-center">
-            <p className="text-gray-700 max-w-2xl mx-auto">
+          <div className="mt-8 md:mt-10 text-center">
+            <p className="text-gray-700 max-w-2xl mx-auto px-4">
               Our sleek, intuitive interface makes ordering food a breeze. 
               Browse restaurants, track your delivery in real-time, and enjoy 
               your meal with minimal wait times.
