@@ -10,14 +10,14 @@ import {
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-// Array of app images - replaced with the provided uploads
+// Array of app images - updated to use relative paths
 const appImages = [
-  "public/lovable-uploads/5294472e-0c2e-4764-b6bf-2f0b6c7d33d1.png",
-  "public/lovable-uploads/0b4ea9bf-da31-4534-847a-65655b74b8e2.png",
-  "public/lovable-uploads/4bc13546-8ef2-495d-8981-11a39e308bea.png",
-  "public/lovable-uploads/ed271ea0-e240-4472-81a2-d865a7fa904e.png",
-  "public/lovable-uploads/a6381050-8fc6-4afa-af49-0a2d7bfdb351.png",
-  "public/lovable-uploads/dba14e2f-e383-4a43-a118-0fdc84846e8e.png"
+  "/lovable-uploads/5294472e-0c2e-4764-b6bf-2f0b6c7d33d1.png",
+  "/lovable-uploads/0b4ea9bf-da31-4534-847a-65655b74b8e2.png",
+  "/lovable-uploads/4bc13546-8ef2-495d-8981-11a39e308bea.png",
+  "/lovable-uploads/ed271ea0-e240-4472-81a2-d865a7fa904e.png",
+  "/lovable-uploads/a6381050-8fc6-4afa-af49-0a2d7bfdb351.png",
+  "/lovable-uploads/dba14e2f-e383-4a43-a118-0fdc84846e8e.png"
 ];
 
 export const VideoSection = () => {
