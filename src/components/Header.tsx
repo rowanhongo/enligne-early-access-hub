@@ -1,5 +1,7 @@
+
 import { useState, useEffect } from 'react';
 import { MobileNav } from './MobileNav';
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -29,11 +31,13 @@ export const Header = () => {
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center gap-4">
-          <img 
-            src="/lovable-uploads/11816126-4ad5-41d8-acdf-53931bd3472d.png" 
-            alt="Enligne Logo" 
-            className="h-8 md:h-10"
-          />
+          <Link to="/">
+            <img 
+              src="/lovable-uploads/11816126-4ad5-41d8-acdf-53931bd3472d.png" 
+              alt="Enligne Logo" 
+              className="h-8 md:h-10"
+            />
+          </Link>
           <div className="hidden md:block text-enligne-red font-semibold text-lg">
             We Move Kigali
           </div>

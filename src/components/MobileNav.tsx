@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { Link } from 'react-router-dom';
 
 interface MobileNavProps {
   links: { href: string; label: string }[];
@@ -38,11 +39,13 @@ export const MobileNav: React.FC<MobileNavProps> = ({ links }) => {
         <div className="fixed inset-0 z-50 bg-white">
           <div className="flex flex-col h-full">
             <div className="flex justify-between items-center p-4 border-b">
-              <img 
-                src="/lovable-uploads/11816126-4ad5-41d8-acdf-53931bd3472d.png" 
-                alt="Enligne Logo" 
-                className="h-8"
-              />
+              <Link to="/" onClick={closeNav}>
+                <img 
+                  src="/lovable-uploads/11816126-4ad5-41d8-acdf-53931bd3472d.png" 
+                  alt="Enligne Logo" 
+                  className="h-8"
+                />
+              </Link>
               <Button
                 variant="ghost"
                 size="sm"

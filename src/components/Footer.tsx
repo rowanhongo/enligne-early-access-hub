@@ -8,11 +8,13 @@ export const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-8 md:mb-0">
-            <img 
-              src="/lovable-uploads/11816126-4ad5-41d8-acdf-53931bd3472d.png" 
-              alt="Enligne Logo" 
-              className="h-8"
-            />
+            <Link to="/">
+              <img 
+                src="/lovable-uploads/11816126-4ad5-41d8-acdf-53931bd3472d.png" 
+                alt="Enligne Logo" 
+                className="h-8"
+              />
+            </Link>
             <p className="mt-2 text-gray-600 max-w-md">
               We move Kigali!<br />
               Tap. Track. Done.
@@ -23,6 +25,11 @@ export const Footer = () => {
             <div>
               <h4 className="text-lg font-semibold mb-4 text-enligne-black">Company</h4>
               <ul className="space-y-2">
+                <li>
+                  <Link to="/" className="text-gray-600 hover:text-enligne-red transition-colors">
+                    Home
+                  </Link>
+                </li>
                 <li>
                   <Link to="/about" className="text-gray-600 hover:text-enligne-red transition-colors">
                     About Us
