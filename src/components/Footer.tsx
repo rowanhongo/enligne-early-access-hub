@@ -27,16 +27,6 @@ export const Footer = () => {
                     About Us
                   </a>
                 </li>
-                <li>
-                  <a href="#" className="text-gray-600 hover:text-enligne-red transition-colors">
-                    Careers
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-600 hover:text-enligne-red transition-colors">
-                    Blog
-                  </a>
-                </li>
               </ul>
             </div>
             
